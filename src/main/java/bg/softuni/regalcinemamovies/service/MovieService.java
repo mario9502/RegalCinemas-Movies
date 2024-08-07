@@ -6,6 +6,9 @@ import bg.softuni.regalcinemamovies.model.dto.MovieDto;
 import java.util.List;
 
 public interface MovieService {
+
+    void init();
+
     MovieDto add(AddMovieDto addMovieDto);
 
     MovieDto getById(Long id);

@@ -32,9 +32,6 @@ public class Movie {
     @Basic
     private LocalDate premiere;
 
-    @Column(name = "video_url")
-    private String videoUrl;
-
     @Column(name = "image_url")
     private String imageUrl;
 
@@ -47,6 +44,18 @@ public class Movie {
     private Genre genre;
 
     public Movie() {}
+
+    public Movie(String title, String directorName, String actors, String description, int lengthInMinutes, LocalDate premiere, String imageUrl, Audio audio, Genre genre) {
+        this.title = title;
+        this.directorName = directorName;
+        this.actors = actors;
+        this.description = description;
+        this.lengthInMinutes = lengthInMinutes;
+        this.premiere = premiere;
+        this.imageUrl = imageUrl;
+        this.audio = audio;
+        this.genre = genre;
+    }
 
     public long getId() {
         return id;
@@ -118,14 +127,6 @@ public class Movie {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
-    }
-
-    public String getVideoUrl() {
-        return videoUrl;
-    }
-
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
     }
 
     public String getImageUrl() {
