@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: RegalCinemas-Movies
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        format_sql: 'TRUE'
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: 'root'
+    password: '12345'
+    url: jdbc:mysql://localhost:3306/regal-cinemas-movies?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=LOCAL
+#  thymeleaf: # Thymeleaf
+#    cache: false
+#    mode: HTML
+#    encoding: UTF-8
+#    prefix: file:src/main/resources/templates/
+#    resources: # Static resources
+#      static-locations: file:src/main/resources/static/
+#      cache:
+#        period: 0
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor: TRACE
+        SQL: DEBUG
+      nodeValue: WARN
+    blog: WARN
+server:
+  port: 8081
